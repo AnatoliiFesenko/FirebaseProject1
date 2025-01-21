@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { getToken, onMessage } from "firebase/messaging";
 import { messaging } from "./firebase/firebaseConfig";
-import { toast, ToastContainer } from "react-toastify";
-import Message from "./components/Message";
 import "react-toastify/dist/ReactToastify.css";
 import { io } from "socket.io-client";
 

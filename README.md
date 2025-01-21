@@ -37,6 +37,7 @@ git clone https://github.com/AnatoliiFesenko/FirebaseProject1
    Add your API keys for webApp/.env
 
 ```bash
+    VITE_PORT=your-webapp-port
     VITE_APP_API_KEY=your-api-key
     VITE_APP_AUTH_DOMAIN=your-auth-domain
     VITE_APP_PROJECT_ID=your-project-id

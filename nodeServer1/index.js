@@ -9,12 +9,13 @@ import * as dotenv from "dotenv";
 dotenv.config();
 const PORT = process.env.PORT;
 const PORT_SERVER2 = process.env.PORT_SERVER2;
+const PORT_WEBAPP = process.env.PORT_WEBAPP;
 
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5000",
+    origin: `http://localhost:${PORT_WEBAPP}`,
     methods: ["GET", "POST"],
   },
 });
@@ -22,7 +23,7 @@ const udpClient = dgram.createSocket("udp4");
 
 app.use(
   cors({
-    origin: "http://localhost:5000",
+    origin: `http://localhost:${PORT_WEBAPP}`,
     methods: ["GET", "POST"],
   })
 );
@@ -40,5 +41,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log("Server running at http://localhost:3000/");
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
